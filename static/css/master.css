@@ -1,3 +1,44 @@
 body {
     font-family: 'Roboto', sans-serif, Arial;
+    color: #212121;
+}
+
+.bg-primary {
+    background-color: #607d8b;
+}
+
+.bg-light {
+    background-color: #FAFAFA;
+}
+
+.bg-warning {
+    background-color: #ff5722;
+}
+
+.bg-danger {
+    background-color: #e91e63;
+}
+
+.text-primary {
+    color: #607d8b;
+}
+
+.text-light {
+    color: #FAFAFA;
+}
+
+.text-warning {
+    color: #ff5722;
+}
+
+.text-danger {
+    color: #e91e63;
+}
+
+.text-secondary {
+    color: #CFD8DC;
+}
+
+.text-primary-darker {
+    color: #455A64;
 }
