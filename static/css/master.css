@@ -1,6 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif, Arial;
     color: #212121;
+    margin: 0;
 }
 
 .bg-primary {
@@ -41,4 +42,38 @@ body {
 
 .text-primary-darker {
     color: #455A64;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 50px 50px auto 60px;
+    grid-template-areas: 
+        "top top top top top top top top"
+        "nav nav nav nav nav nav nav nav"
+        "main main main main main main main main"
+        "ftr ftr ftr ftr ftr ftr ftr ftr";
+
+    border: 1px solid red;
+}
+
+.box {
+    border: 2px solid green;
+}
+
+.top-nav {
+    grid-area: top;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.content {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: ftr;
 }
