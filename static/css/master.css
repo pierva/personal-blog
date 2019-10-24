@@ -77,3 +77,34 @@ body {
 .footer {
     grid-area: ftr;
 }
+
+
+
+/* Utilities - SPAN COLUMNS*/
+.span2 {
+    grid-column-end: span 2;
+}
+
+.span3 {
+    grid-column-end: span 3;
+}
+
+.span4 {
+    grid-column-end: span 4;
+}
+
+.span5 {
+    grid-column-end: span 5;
+}
+
+.span6 {
+    grid-column-end: span 6;
+}
+
+.span7 {
+    grid-column-end: span 7;
+}
+
+.span8 {
+    grid-column-end: span 8;
+}
