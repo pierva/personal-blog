@@ -5,22 +5,60 @@
         <link rel="stylesheet" href="./static/css/home-page.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" 
             rel="stylesheet">
-            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
-                rel="stylesheet" 
-                integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" 
-                crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" 
+            integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" 
+            crossorigin="anonymous">
 
         <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
         <title>Pierva Blog</title>
     </head>
     <body>
         <div class="container">
-            <div class="box top-nav">TOP NAVIGATION</div>
-            <div class="box nav">NAVIGATION</div>
-            <div class="box content">
+            <!-- NAVBAR START -->
+            <div class="grid-item align-center top-nav bg-primary">
+                <div>LOGO</div>
+                <div class="d-flex">
+                    <div>
+                        LOGOUT
+                    </div>
+                    <div>
+                        <span class="fas fa-share-alt"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item nav bg-primary">
+                <div class="nav-group">
+                    <div class="nav-item">
+                        <a href="#">LATEST</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">POPULAR</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">FAVORITES</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">AUTHORS</a>
+                    </div>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-item search">
+                        <span class="fas fa-search"></span>
+                    </div>
+                    <div class="search-input d-none nav-item">
+                        <input type="text" name="search" id="search">
+                    </div>
+                </div>
+    
+            </div>
+            <!-- NAVBAR END -->
+
+            <div class="grid-item content">
                 <h1>Pierva Blog Website</h1>
             </div>
-            <div class="box footer">FOOTER</div>
+            <footer class="grid-item align-center bg-primary footer">
+                <div>FOOTER</div>
+            </footer>
         </div>
         
     </body>

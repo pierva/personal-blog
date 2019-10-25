@@ -2,6 +2,7 @@ body {
     font-family: 'Roboto', sans-serif, Arial;
     color: #212121;
     margin: 0;
+    font-size: 16px;
 }
 
 .bg-primary {
@@ -54,21 +55,54 @@ body {
         "nav nav nav nav nav nav nav nav"
         "main main main main main main main main"
         "ftr ftr ftr ftr ftr ftr ftr ftr";
-
-    border: 1px solid red;
 }
 
 .box {
     border: 2px solid green;
 }
 
+.grid-item {
+    display: flex;
+    padding: 1rem;
+}
+
+/* NAVBAR START */
+
 .top-nav {
     grid-area: top;
+    justify-content: space-between;
 }
 
 .nav {
     grid-area: nav;
+    justify-content: space-between;
 }
+
+.nav-group {
+    display: flex;
+}
+
+.nav-item {
+    padding: 0.5rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+.search:hover + .search-input {
+    display: block;
+    position: absolute;
+    left: 0;
+}
+
+.search-input {
+    width: 100%;
+}
+
+.search-input > input {
+    width: 100%;
+}
+
+/* NAVBAR END */
 
 .content {
     grid-area: main;
@@ -107,4 +141,17 @@ body {
 
 .span8 {
     grid-column-end: span 8;
+}
+
+.align-center {
+    align-items: center;
+}
+
+/* DISPLAY */
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
 }
