@@ -10,7 +10,7 @@ body {
 }
 
 .bg-light {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
 }
 
 .bg-warning {
@@ -26,7 +26,7 @@ body {
 }
 
 .text-light {
-    color: #FAFAFA;
+    color: #fafafa;
 }
 
 .text-warning {
@@ -38,11 +38,11 @@ body {
 }
 
 .text-secondary {
-    color: #CFD8DC;
+    color: #cfd8dc;
 }
 
 .text-primary-darker {
-    color: #455A64;
+    color: #455a64;
 }
 
 .container {
@@ -78,6 +78,13 @@ body {
     justify-content: space-between;
 }
 
+.logo {
+    margin: 0.3rem 0.75rem;
+}
+.logo-small {
+    width: 35px;
+}
+
 .nav-group {
     display: flex;
 }
@@ -88,19 +95,25 @@ body {
     cursor: pointer;
 }
 
-.search:hover + .search-input {
-    display: block;
-    position: absolute;
-    left: 0;
+.nav-link-primary {
+    color: #fafafa;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.25rem;
+}
+
+.nav-link-primary:hover {
+    background-color: #FAFAFA;
+    color: #607d8b;
 }
 
 .search-input {
     width: 100%;
 }
 
-.search-input > input {
-    width: 100%;
-}
+
 
 /* NAVBAR END */
 
