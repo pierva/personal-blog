@@ -13,12 +13,12 @@
         <title>Pierva Blog</title>
     </head>
     <body>
-        <div class="container">
+        <section class="container">
             <!-- NAVBAR START -->
-            <div class="grid-item align-center top-nav bg-primary">
+            <header class="grid-item align-center top-nav bg-primary">
                 <div class="logo">
                     <a href="#">
-                        <img src="./static/assets/img/pizza_peeler_dark_for_social.png" 
+                        <img src="./static/assets/logo/pizza_peeler_dark_for_social.png" 
                             alt="peeler" class="logo-small">
                     </a>
                 </div>
@@ -30,8 +30,8 @@
                         <span class="fas fa-share-alt"></span>
                     </div>
                 </div>
-            </div>
-            <div class="grid-item nav bg-primary">
+            </header>
+            <nav class="grid-item nav bg-primary">
                 <div class="nav-group">
                     <a href="#" class="nav-link-primary nav-item">LATEST</a>
                     <a href="#" class="nav-link-primary nav-item">POPULAR</a>
@@ -46,17 +46,53 @@
                         <input type="text" name="search" id="search">
                     </div>
                 </div>
-    
-            </div>
+            </nav>
             <!-- NAVBAR END -->
 
-            <div class="grid-item content">
-                <h1>Pierva Blog Website</h1>
-            </div>
+            <section class="span-8 content bg-light">
+
+                <!-- MAIN POST START -->
+                <div class="card main-post p-0">
+                    <img src="./static/assets/img/_MG_2589.JPG" 
+                        alt="pizza in the oven" class="card-img card-img-top">
+                    <div class="card-head">
+                        <h1 class="header">How the best pizza is cooked</h1>
+                        <div class="text-right">
+                            <div class="rating text-warning">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star-half-alt"></span>
+                            </div>
+                            <div class="text-description font-light">
+                                <span id="totalReview">260</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body text-description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                           Ea corrupti, odit, sed obcaecati natus voluptatibus repellendus 
+                           labore laudantium nemo </p>
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <span class="">Piervalerio Vignola</span>
+                        </div>
+                        <div class="font-light">
+                            <span class="date">Oct 19 - 5 min read</span>
+                            <span class="fas fa-bookmark bookmark-empty text-warning"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- MAIN POST END -->
+
+            </section>
+
+
             <footer class="grid-item align-center bg-primary footer">
                 <div>FOOTER</div>
             </footer>
-        </div>
-        
+        </section> 
     </body>
 </html>
