@@ -272,8 +272,25 @@ a {
 
 .footer {
     grid-area: ftr;
+    display: flex;
+    flex-direction: column;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5em;
+}
+
+.row-item {
+    margin: 0 0.5em;
+}
+
+.ftr-icon {
+    font-size: 1.4rem;
+}
 
 
 /* Utilities - SPAN COLUMNS*/
