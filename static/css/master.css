@@ -54,16 +54,28 @@ a {
     color: #757575;
 }
 
-.container {
+.wrapper {
     height: 100vh;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 50px 50px auto 60px;
-    grid-template-areas: 
+    grid-template-columns: 100vw;
+    grid-template-areas:
         "top top top top top top top top"
         "nav nav nav nav nav nav nav nav"
         "main main main main main main main main"
         "ftr ftr ftr ftr ftr ftr ftr ftr";
+}
+
+.container {
+    grid-area: main;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 350px auto auto;
+    grid-template-areas: 
+        "mtl mtl mtl mtl mtr mtr mtr mtr"
+        "mcc mcc mcc mcc mcc mcc mcc mcc"
+        "mbc mbc mbc mbc mbc mbc mbc mbc"
 }
 
 .box {
@@ -127,9 +139,24 @@ a {
 
 /* MAIN CONTENT  START*/
 .content {
-    grid-area: main;
     padding: 1rem;
     overflow-y: scroll;
+}
+
+#topLeft {
+    grid-area: mtl;
+}
+
+#topRight {
+    grid-area: mtr;
+}
+
+#center {
+    grid-area: mcc;
+}
+
+#bottom {
+    grid-area: mbc;
 }
 
 .card {
@@ -295,31 +322,31 @@ a {
 
 /* Utilities - SPAN COLUMNS*/
 .span-2 {
-    grid-column-end: span 2;
+    grid-column-end: 3 !important;
 }
 
 .span-3 {
-    grid-column-end: span 3;
+    grid-column-end: 4 !important;
 }
 
 .span-4 {
-    grid-column-end: span 4;
+    grid-column-end: 5 !important;
 }
 
 .span-5 {
-    grid-column-end: span 5;
+    grid-column-end: 6 !important;
 }
 
 .span-6 {
-    grid-column-end: span 6;
+    grid-column-end: 7 !important;
 }
 
 .span-7 {
-    grid-column-end: span 7;
+    grid-column-end: 8 !important;
 }
 
 .span-8 {
-    grid-column-end: span 8;
+    grid-column-end: 9;
 }
 
 /* PADDING - MARGIN - ALIGNMENT */
@@ -359,4 +386,16 @@ a {
 
 .font-light {
     font-weight: 200;
+}
+
+@media (max-width: 768px) {
+    #topLeft {
+        grid-column-end: 9;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    #topLeft {
+        grid-column-end: 5
+    }
+
 }

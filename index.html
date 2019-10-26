@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./static/css/master.css">
-        <link rel="stylesheet" href="./static/css/home-page.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" 
-            rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" 
-            integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" 
-            crossorigin="anonymous">
 
-        <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
-        <title>Pierva Blog</title>
-    </head>
-    <body>
-        <section class="container">
-            <!-- NAVBAR START -->
-            <header class="grid-item align-center top-nav bg-primary">
-                <div class="logo">
-                    <a href="#">
-                        <img src="./static/assets/logo/pizza_peeler_dark_for_social.png" 
-                            alt="peeler" class="logo-small">
-                    </a>
-                </div>
-                <div class="nav-group">
-                    <a href="#" class="nav-item nav-link-primary">
-                        LOGOUT
-                    </a>
-                    <div class="nav-item nav-link-primary">
-                        <span class="fas fa-share-alt"></span>
-                    </div>
-                </div>
-            </header>
-            <nav class="grid-item nav bg-primary">
-                <div class="nav-group">
-                    <a href="#" class="nav-link-primary nav-item">LATEST</a>
-                    <a href="#" class="nav-link-primary nav-item">POPULAR</a>
-                    <a href="#" class="nav-link-primary nav-item">FAVORITES</a>
-                    <a href="#" class="nav-link-primary nav-item">AUTHORS</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-item search nav-link-primary">
-                        <span class="fas fa-search"></span>
-                    </div>
-                    <div class="search-input d-none nav-item">
-                        <input type="text" name="search" id="search">
-                    </div>
-                </div>
-            </nav>
-            <!-- NAVBAR END -->
+<head>
+    <link rel="stylesheet" href="./static/css/master.css">
+    <link rel="stylesheet" href="./static/css/home-page.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+        integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
 
-            <section class="span-8 content bg-light">
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+    <title>Pierva Blog</title>
+</head>
+
+<body class="bg-light">
+
+    <section class="wrapper">
+        <!-- NAVBAR START -->
+
+        <header class="grid-item align-center top-nav bg-primary">
+            <div class="logo">
+                <a href="#">
+                    <img src="./static/assets/logo/pizza_peeler_dark_for_social.png" alt="peeler" class="logo-small">
+                </a>
+            </div>
+            <div class="nav-group">
+                <a href="#" class="nav-item nav-link-primary">
+                    LOGOUT
+                </a>
+                <div class="nav-item nav-link-primary">
+                    <span class="fas fa-share-alt"></span>
+                </div>
+            </div>
+        </header>
+        <nav class="grid-item nav bg-primary">
+            <div class="nav-group">
+                <a href="#" class="nav-link-primary nav-item">LATEST</a>
+                <a href="#" class="nav-link-primary nav-item">POPULAR</a>
+                <a href="#" class="nav-link-primary nav-item">FAVORITES</a>
+                <a href="#" class="nav-link-primary nav-item">AUTHORS</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-item search nav-link-primary">
+                    <span class="fas fa-search"></span>
+                </div>
+                <div class="search-input d-none nav-item">
+                    <input type="text" name="search" id="search">
+                </div>
+            </div>
+        </nav>
+        <!-- NAVBAR END -->
+
+        <section class="container content">
+            <section id="topLeft">
 
                 <!-- MAIN POST START -->
-                <div class="card main-post p-0">
-                    <img src="./static/assets/img/_MG_2589.JPG" 
-                        alt="pizza in the oven" class="card-img card-img-top">
+                <div class="card main-post p-0 span-8">
+                    <img src="./static/assets/img/_MG_2589.JPG" alt="pizza in the oven" class="card-img card-img-top">
                     <div class="card-head">
                         <a href="#" class="header">
                             <h1 class="header-title">How the best pizza is cooked</h1>
@@ -73,9 +74,9 @@
                         </div>
                     </div>
                     <div class="card-body text-description">
-                        <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                               Ea corrupti, odit, sed obcaecati natus voluptatibus repellendus 
-                               labore laudantium nemo
+                        <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ea corrupti, odit, sed obcaecati natus voluptatibus repellendus
+                            labore laudantium nemo
                         </a>
                     </div>
                     <div class="card-footer">
@@ -89,7 +90,20 @@
                     </div>
                 </div>
                 <!-- MAIN POST END -->
+            </section>
 
+            <section id="topRight">
+                <div>
+                    TOP RIGHT
+                </div>
+            </section>
+
+            <section id="center">
+                <div>
+                </div>
+            </section>
+
+            <section id="bottom">
                 <!-- GENERAL POSTS START -->
                 <div class="card post p-0">
                     <div class="card-sided">
@@ -100,16 +114,16 @@
                             <div class="card-sided-body text-description">
                                 <a href="#">
                                     <p class="m-0">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Ea corrupti, odit, sed obcaecati natus voluptatibus repellendus 
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Ea corrupti, odit, sed obcaecati natus voluptatibus repellendus
                                         labore laudantium nemo
                                     </p>
                                 </a>
                             </div>
                         </div>
                         <div class="card-side small-side">
-                            <img src="./static/assets/img/crudaiola.jpg" 
-                            alt="pizza in the oven" class="card-img card-img-top-right">
+                            <img src="./static/assets/img/crudaiola.jpg" alt="pizza in the oven"
+                                class="card-img card-img-top-right">
                             <div class="text-right rating-group">
                                 <div class="rating text-warning">
                                     <span class="fas fa-star"></span>
@@ -144,16 +158,16 @@
                             <div class="card-sided-body text-description">
                                 <a href="#">
                                     <p class="m-0">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Ea corrupti, odit, sed obcaecati natus voluptatibus repellendus 
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Ea corrupti, odit, sed obcaecati natus voluptatibus repellendus
                                         labore laudantium nemo
                                     </p>
                                 </a>
                             </div>
                         </div>
                         <div class="card-side small-side">
-                            <img src="./static/assets/img/Bread.jpg" 
-                            alt="pizza in the oven" class="card-img card-img-top-right">
+                            <img src="./static/assets/img/Bread.jpg" alt="pizza in the oven"
+                                class="card-img card-img-top-right">
                             <div class="text-right rating-group">
                                 <div class="rating text-warning">
                                     <span class="fas fa-star"></span>
@@ -179,49 +193,56 @@
                     </div>
                 </div>
                 <!-- GENERAL POSTS END -->
-                
             </section>
+        </section>
 
 
-            <footer class="align-center bg-primary footer">
-                <div class="row">
-                    <div class="row-item ">
-                        <a href="#">
-                            <span class="fab fa-linkedin-in ftr-icon"></span>
-                        </a>
-                    </div>
-                    <div class="row-item">
-                        <a href="#">
-                            <span class="fab fa-instagram ftr-icon"></span>
-                        </a>
-                    </div>
-                    <div class="row-item">
-                        <a href="#">
-                            <span class="fab fa-facebook-f ftr-icon"></span>
-                        </a>
-                    </div>
-                    <div class="row-item">
-                        <a href="#">
-                            <span class="fab fa-youtube ftr-icon"></span>
-                        </a>
-                    </div>
+
+
+
+
+
+
+        <footer class="align-center bg-primary footer">
+            <div class="row">
+                <div class="row-item ">
+                    <a href="#">
+                        <span class="fab fa-linkedin-in ftr-icon"></span>
+                    </a>
                 </div>
-                <div class="row">
-                    <div class="row-item">
-                        <a href="#">Terms & Conditions</a>
-                    </div>
-                    <div class="row-item">
-                        <a href="#">
-                            Help
-                        </a>
-                    </div>
-                    <div class="row-item">
-                        <a href="#">
-                            Contacts
-                        </a>
-                    </div>
+                <div class="row-item">
+                    <a href="#">
+                        <span class="fab fa-instagram ftr-icon"></span>
+                    </a>
                 </div>
-            </footer>
-        </section> 
-    </body>
+                <div class="row-item">
+                    <a href="#">
+                        <span class="fab fa-facebook-f ftr-icon"></span>
+                    </a>
+                </div>
+                <div class="row-item">
+                    <a href="#">
+                        <span class="fab fa-youtube ftr-icon"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row-item">
+                    <a href="#">Terms & Conditions</a>
+                </div>
+                <div class="row-item">
+                    <a href="#">
+                        Help
+                    </a>
+                </div>
+                <div class="row-item">
+                    <a href="#">
+                        Contacts
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </section>
+</body>
+
 </html>
