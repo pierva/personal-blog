@@ -77,7 +77,7 @@ a {
     grid-template-areas: 
         "mtl mtl mtl mtl mtr mtr mtr mtr"
         "mcc mcc mcc mcc mcc mcc mcc mcc"
-        "mbc mbc mbc mbc mbc mbc mbc mbc"
+        "mbc mbc mbc mbc mbc mbc side side"
 }
 
 .box {
@@ -306,7 +306,8 @@ a {
 
 /* SMALL CARD CSS */
 .post-small {
-    height: 100px;
+    height: 106px;
+    margin-bottom: 1em;
 }
 
 .card-sided-small {
@@ -331,6 +332,10 @@ a {
     align-items: center;
     justify-content: space-between;
     margin-right: 0.5rem;
+}
+
+.font-small {
+    font-size: 0.8rem;
 }
 
 .ranking {
@@ -388,7 +393,7 @@ a {
 }
 
 .span-8 {
-    grid-column-end: 9;
+    grid-column-end: 9 !important;
 }
 
 /* PADDING - MARGIN - ALIGNMENT */
@@ -464,6 +469,10 @@ a {
         display: none;
     }
 
+    #bottom {
+        grid-column-end: 9;
+    }
+
     .logo-img {
         background-image: url('../assets/logo/pizza_peeler_dark_for_social.png');   
     }
@@ -489,6 +498,6 @@ a {
 /* Apply to large devices */
 @media (min-width: 1025px) {
     .container {
-        padding: 1rem calc((100vw - 900px)/2);
+        padding: 1rem calc((100vw - 950px)/2);
     }
 }
