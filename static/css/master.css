@@ -43,7 +43,7 @@ a {
 }
 
 .text-secondary {
-    color: #cfd8dc;
+    color: #b0bec5;
 }
 
 .text-primary-darker {
@@ -67,6 +67,8 @@ a {
 }
 
 .container {
+    overflow: scroll;
+    padding: 1rem;
     grid-area: main;
     display: grid;
     grid-gap: 1em;
@@ -102,7 +104,20 @@ a {
 
 .logo {
     margin: 0.3rem 0.75rem;
+    height: 50px;
+    width: 100px;
 }
+
+.logo-img {
+    position: absolute;
+    background-image: url('../assets/logo/pizza@yours_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 40px;
+    margin: 5px 0;
+}
+
 .logo-small {
     width: 35px;
 }
@@ -138,11 +153,6 @@ a {
 /* NAVBAR END */
 
 /* MAIN CONTENT  START*/
-.content {
-    padding: 1rem;
-    overflow-y: scroll;
-}
-
 #topLeft {
     grid-area: mtl;
 }
@@ -170,6 +180,7 @@ a {
 
 .card-img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -293,6 +304,38 @@ a {
     margin: 0.5em;
 }
 
+/* SMALL CARD CSS */
+.post-small {
+    height: 100px;
+}
+
+.card-sided-small {
+    display: inline-flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-small-title {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: 0 0.5em;
+}
+
+.card-sided-small-img-left {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.card-small-header-group {
+    display: inline-flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 0.5rem;
+}
+
+.ranking {
+    font-size: 2rem;
+}
 
 /* MAIN CONTENT END */
 
@@ -307,7 +350,6 @@ a {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: center;
     margin-top: 0.5em;
 }
 
@@ -363,6 +405,18 @@ a {
     margin: 0 !important;
 }
 
+.m-05 {
+    margin: 0.5em !important;
+}
+
+.ml-05 {
+    margin-left: 0.5em !important;
+}
+
+.mr-05 {
+    margin-right: 0.5em !important;
+}
+
 .ml-1 {
     margin-left: 1em !important;
 }
@@ -375,6 +429,14 @@ a {
     text-align: right;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
 /* DISPLAY */
 .d-flex {
     display: flex;
@@ -384,18 +446,49 @@ a {
     display: none;
 }
 
+.d-inline-flex {
+    display: inline-flex;
+}
+
 .font-light {
     font-weight: 200;
 }
 
+/* Apply to small devices */
 @media (max-width: 768px) {
     #topLeft {
         grid-column-end: 9;
     }
+
+    #topRight {
+        display: none;
+    }
+
+    .logo-img {
+        background-image: url('../assets/logo/pizza_peeler_dark_for_social.png');   
+    }
 }
+
+@media (min-width: 769px) and (max-width: 860px) {
+    .date {
+        display: none;
+    }
+
+    .author {
+        font-size: 0.8rem;
+    }
+}
+
+/* Apply to medium devices */
 @media (min-width: 769px) and (max-width: 1024px) {
     #topLeft {
         grid-column-end: 5
     }
+}
 
+/* Apply to large devices */
+@media (min-width: 1025px) {
+    .container {
+        padding: 1rem calc((100vw - 900px)/2);
+    }
 }

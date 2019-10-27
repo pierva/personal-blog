@@ -14,14 +14,12 @@
 
 <body class="bg-light">
 
-    <section class="wrapper">
+    <main class="wrapper">
         <!-- NAVBAR START -->
 
         <header class="grid-item align-center top-nav bg-primary">
             <div class="logo">
-                <a href="#">
-                    <img src="./static/assets/logo/pizza_peeler_dark_for_social.png" alt="peeler" class="logo-small">
-                </a>
+                <a href="./index.html" class="logo-img" target="_self"></a>
             </div>
             <div class="nav-group">
                 <a href="#" class="nav-item nav-link-primary">
@@ -50,7 +48,7 @@
         </nav>
         <!-- NAVBAR END -->
 
-        <section class="container content">
+        <section class="container">
             <section id="topLeft">
 
                 <!-- MAIN POST START -->
@@ -92,11 +90,55 @@
                 <!-- MAIN POST END -->
             </section>
 
+            <!-- TOP 3 POSTS -->
+
             <section id="topRight">
-                <div>
-                    TOP RIGHT
+                <div class="card post-small p-0">
+                    <div class="card-sided-small">
+                        <div class="small-side">
+                            <img src="./static/assets/img/crudaiola.jpg" alt="pizza in the oven"
+                                class="card-img card-sided-small-img-left">
+                        </div>
+                        <div class="card-side large-side">
+                            <div class="card-small-header-group">
+                                <a href="#">
+                                    <h1 class="card-small-title">The origins of crudaiola</h1>
+                                </a>
+                                <div>
+                                    <span class="ranking text-secondary">1</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="row ml-05 mr-05">
+                                    <span class="author">Bruno Rossi</span>
+                                </div>
+                                <div class="card-footer m-0 w-100">
+                                    <div class="rating rating-group d-inline-flex text-warning">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star star-empty"></span>
+                                        <div class="text-description font-light ml-05">
+                                            <span id="totalReview">792</span>
+                                        </div>
+                                    </div>
+    
+                                    <div class="font-light mr-05">
+                                        <span class="date">Oct 5 - 7 min read</span>
+                                        <span class="fas fa-bookmark bookmark-empty text-warning"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
+
+            <!-- TOP 3 POSTS ENDS -->
 
             <section id="center">
                 <div>
@@ -116,6 +158,7 @@
                                     <p class="m-0">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Ea corrupti, odit, sed obcaecati natus voluptatibus repellendus
+                                        labore laudantium nemo sed obcaecati natus voluptatibus repellendus
                                         labore laudantium nemo
                                     </p>
                                 </a>
@@ -160,7 +203,11 @@
                                     <p class="m-0">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Ea corrupti, odit, sed obcaecati natus voluptatibus repellendus
-                                        labore laudantium nemo
+                                        labore laudantium nemo. Curabitur maximus convallis nulla, et imperdiet 
+                                        nunc molestie sed. Suspendisse vel est ultrices, viverra est in, facilisis 
+                                        dolor. Pellentesque velit diam, ornare sit amet eleifend consectetur, 
+                                        laoreet ac elit. Donec scelerisque quis risus congue rutrum. 
+                                        Integer mi velit, ultrices et pharetra sed
                                     </p>
                                 </a>
                             </div>
@@ -204,7 +251,7 @@
 
 
         <footer class="align-center bg-primary footer">
-            <div class="row">
+            <div class="row justify-center">
                 <div class="row-item ">
                     <a href="#">
                         <span class="fab fa-linkedin-in ftr-icon"></span>
@@ -226,7 +273,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-center">
                 <div class="row-item">
                     <a href="#">Terms & Conditions</a>
                 </div>
@@ -242,7 +289,7 @@
                 </div>
             </div>
         </footer>
-    </section>
+    </main>
 </body>
 
 </html>
