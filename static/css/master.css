@@ -252,6 +252,7 @@ a {
     text-align: justify;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 1.1rem;
 }
 
 .card-body {
@@ -260,6 +261,7 @@ a {
     height: 20%;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 1.1rem;
 }
 
 .card-body > * {
