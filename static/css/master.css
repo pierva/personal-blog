@@ -66,24 +66,6 @@ a {
         "ftr ftr ftr ftr ftr ftr ftr ftr";
 }
 
-.container {
-    overflow: scroll;
-    padding: 1rem;
-    grid-area: main;
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 350px auto auto;
-    grid-template-areas: 
-        "mtl mtl mtl mtl mtr mtr mtr mtr"
-        "mcc mcc mcc mcc mcc mcc mcc mcc"
-        "mbc mbc mbc mbc mbc side side side"
-}
-
-.box {
-    border: 2px solid green;
-}
-
 .grid-item {
     display: flex;
     padding: 1rem;
@@ -152,29 +134,6 @@ a {
 
 /* NAVBAR END */
 
-/* MAIN CONTENT  START*/
-#topLeft {
-    grid-area: mtl;
-}
-
-#topRight {
-    grid-area: mtr;
-}
-
-#center {
-    grid-area: mcc;
-    padding: 1em 0;
-    margin: 0 -1em;
-}
-
-#side {
-    grid-area: side;
-}
-
-#bottom {
-    grid-area: mbc;
-}
-
 .card {
     display: flex;
     flex-direction: column;
@@ -188,20 +147,6 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.main-post {
-    height: 350px;
-    margin-bottom: 1em;
-}
-
-.post {
-    height: 200px;
-    margin-bottom: 2em;
-}
-
-.main-post-img {
-    height: 60%;
 }
 
 .card-img-top {
@@ -346,12 +291,11 @@ a {
     font-size: 0.8rem;
 }
 
+/* End small card CSS */
+
 .ranking {
     font-size: 2rem;
 }
-
-/* MAIN CONTENT END */
-
 
 .footer {
     grid-area: ftr;
@@ -372,30 +316,6 @@ a {
 
 .row-item {
     margin: 0 0.5em;
-}
-
-.middle-group {
-    height: 260px;
-    background-color: #eceff1;
-    padding: 1rem;
-    overflow-y: scroll;
-}
-
-.group-header {
-    font-size: 1.6em;
-    font-weight: 400;
-}
-
-.link-item {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.2em;
-    padding: 1em 0.5em;
-    border-radius: 0.5em;
-}
-
-.link-item:hover {
-    background-color: #cfd8dc;
 }
 
 .ftr-icon {
@@ -501,63 +421,8 @@ a {
 
 /* Apply to small devices */
 @media (max-width: 768px) {
-    #topLeft {
-        grid-column-end: 9;
-    }
-
-    #topRight {
-        display: none;
-    }
-
-    #bottom {
-        grid-column-end: 9;
-    }
-
+    /* Shrink logo */
     .logo-img {
         background-image: url('../assets/logo/pizza_peeler_dark_for_social.png');   
-    }
-}
-
-@media (min-width: 769px) and (max-width: 860px) {
-    .date {
-        display: none;
-    }
-
-    .author {
-        font-size: 0.8rem;
-    }
-}
-
-/* Apply to medium devices */
-@media (min-width: 769px) and (max-width: 1024px) {
-    #topLeft {
-        grid-column-end: 5
-    }
-
-    #center {
-        display: block;
-    }
-
-    #bottom {
-        grid-column-end: 9;
-    }
-
-    .post {
-        height: 230px;
-    }
-}
-
-/* Apply to large devices */
-@media (min-width: 1025px) {
-    .container {
-        padding: 1rem calc((100vw - 950px)/2);
-    }
-
-    .post {
-        height: 230px;
-    }
-
-    #side {
-        display: block;
     }
 }
