@@ -356,6 +356,10 @@ a {
     flex-direction: row;
     width: 100%;
     margin-top: 0.5em;
+} 
+
+.dir-column {
+    flex-direction: column;
 }
 
 .row-item {
@@ -539,5 +543,9 @@ a {
 @media (min-width: 1025px) {
     .container {
         padding: 1rem calc((100vw - 950px)/2);
+    }
+
+    .post {
+        height: 230px;
     }
 }
