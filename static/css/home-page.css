@@ -9,7 +9,8 @@
     grid-template-areas: 
         "mtl mtl mtl mtl mtr mtr mtr mtr"
         "mcc mcc mcc mcc mcc mcc mcc mcc"
-        "mbc mbc mbc mbc mbc side side side"
+        "mbc mbc mbc mbc mbc side side side";
+    transition: top 0.5s;
 }
 
 /* Grid position assignment */

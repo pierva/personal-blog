@@ -76,12 +76,16 @@ a {
 .top-nav {
     grid-area: top;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .nav {
     grid-area: nav;
     justify-content: space-between;
     overflow-y: scroll;
+    position: relative;
+    z-index: 0;
+    transition: top 0.5s;
 }
 
 .logo {
@@ -417,6 +421,16 @@ a {
 
 .font-light {
     font-weight: 200;
+}
+
+.nav-hide {
+    position: relative;
+    top: -100px;
+}
+
+.nav-hide-move-content {
+    position: relative;
+    top: -50px;
 }
 
 /* Apply to small devices */
