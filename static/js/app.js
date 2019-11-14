@@ -24,8 +24,6 @@ let view = {
         let prevPosition = mainContainer.scrollTop;
         mainContainer.onscroll = function() {
             const currPosition = mainContainer.scrollTop;
-            console.log('current', currPosition);
-            console.log('previous', prevPosition)
             if (prevPosition - currPosition < 50) {
                 nav.style.top = '-' + octopus.getNavbarHeight();
                 main.style.top = '-50px';
