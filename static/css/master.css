@@ -138,6 +138,10 @@ a {
 
 /* NAVBAR END */
 
+#main {
+    position: relative;
+}
+
 .card {
     display: flex;
     flex-direction: column;
