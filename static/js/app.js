@@ -1,6 +1,7 @@
 // Data is stored in the model
 let model = {
-    NAVHEIGHT: '100px'
+    NAVHEIGHT: '100px',
+    bookmarked: []
 
 }
 
@@ -18,6 +19,7 @@ let view = {
     init: function() {
         this.mainContentScrollHandlers(100);
         this.scrollMeUp();
+        this.addEventListeners();
     },
 
     mainContentScrollHandlers: function(buffer) {
@@ -79,6 +81,21 @@ let view = {
             }
             window.requestAnimationFrame(animatedScrolling);
         });
+    },
+
+    addEventListeners: function() {
+        const searchButton = document.querySelector('.search');
+        searchButton.addEventListener('click', function() {
+            this.nextElementSibling.classList.toggle('d-none');
+        });
+        
+        // Fill/Unfill bookmarks on click
+        const bookmarks = document.querySelectorAll('.fa-bookmark');
+        for (bookmark of bookmarks) {
+            bookmark.addEventListener('click', function() {
+                this.classList.toggle('bookmark-empty');
+            });
+        }
     }
 }
 
