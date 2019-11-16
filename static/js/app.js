@@ -12,6 +12,16 @@ let octopus = {
     },
     getNavbarHeight: function() {
         return model.NAVHEIGHT;
+    },
+
+    addToBookmarked: function(id) {
+        model.bookmarked.push(id);
+    },
+
+    removeFromBookmarked: function(id) {
+        model.bookmarked = model.bookmarked.filter(function(elem) {
+            return elem != id;
+        });
     }
 }
 
@@ -93,7 +103,14 @@ let view = {
         const bookmarks = document.querySelectorAll('.fa-bookmark');
         for (bookmark of bookmarks) {
             bookmark.addEventListener('click', function() {
-                this.classList.toggle('bookmark-empty');
+                const removed = this.classList.toggle('bookmark-empty');
+                const id = this.dataset.id;
+                if (removed) {
+                    octopus.removeFromBookmarked(id);
+                } else {
+                    octopus.addToBookmarked(id);
+                }
+
             });
         }
     }
