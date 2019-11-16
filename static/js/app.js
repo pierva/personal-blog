@@ -1,7 +1,6 @@
 // Data is stored in the model
 let model = {
-    NAVHEIGHT: '100px',
-    scrollPosition: 0
+    NAVHEIGHT: '100px'
 
 }
 
@@ -12,19 +11,13 @@ let octopus = {
     },
     getNavbarHeight: function() {
         return model.NAVHEIGHT;
-    },
-    getScrollPosition: function() {
-        return model.scrollPosition;
-    },
-    updateScrollPosition: function(pos) {
-        return model.scrollPosition = pos;
     }
 }
 
 let view = {
     init: function() {
         this.mainContentScrollHandlers(100);
-        // this.scrollMeUp();
+        this.scrollMeUp();
     },
 
     mainContentScrollHandlers: function(buffer) {
@@ -77,8 +70,15 @@ let view = {
         const scroller = document.getElementById('scrollMeUp');
         const mainContainer = document.getElementById('main');
         scroller.addEventListener('click', function(event) {
-            mainContainer.scrollTo({top: 0, behavior: 'smooth'})
-        })
+            const animatedScrolling = function() {
+                const c = mainContainer.scrollTop;
+                if (c > 0) {
+                    window.requestAnimationFrame(animatedScrolling);
+                    mainContainer.scrollTo(0, c - c / 8);
+                }
+            }
+            window.requestAnimationFrame(animatedScrolling);
+        });
     }
 }
 
