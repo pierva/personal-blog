@@ -154,7 +154,9 @@ a {
 }
 
 .search-input {
-    width: 100%;
+    position: absolute;
+    width: 300px;
+    right: 50px;
 }
 
 /* NAVBAR END */
@@ -458,10 +460,23 @@ a {
     top: -50px;
 }
 
+/* FORM ELEMENTS */
+.form-text-input {
+    border-radius: 0.25rem;
+    border-color: transparent;
+    height: 1.7rem;
+    font-size: 1.2rem;
+}
+
 /* Apply to small devices */
 @media (max-width: 768px) {
     /* Shrink logo */
     .logo-img {
         background-image: url('../assets/logo/pizza_peeler_dark_for_social.png');   
+    }
+
+    .search-input {
+        width: calc(100vw - 65px);
+        left: 0px;
     }
 }
