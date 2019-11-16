@@ -23,47 +23,62 @@ let octopus = {
 
 let view = {
     init: function() {
-        this.hideNavBarOnScroll();
-        this.toggleScrollMeBack(100);
+        this.mainContentScrollHandlers(100);
+        // this.scrollMeUp();
     },
 
-    hideNavBarOnScroll: function() {
+    mainContentScrollHandlers: function(buffer) {
         const nav = document.getElementsByTagName('nav')[0];
         const mainContainer = document.getElementById('main');
         let prevPosition = mainContainer.scrollTop;
+        let firstScroll = true;
         mainContainer.onscroll = function() {
-            const currPosition = mainContainer.scrollTop;   
-            if (prevPosition - currPosition < 50) {
-                nav.style.top = '-' + octopus.getNavbarHeight();
-                main.style.top = '-50px';
-                // nav.classList.add('nav-hide');
-                // main.classList.add('nav-hide-move-content');
+            const currPosition = mainContainer.scrollTop; 
 
-            } else {
-                nav.style.top = '0';
-                main.style.top = '0';
-                // nav.classList.remove('nav-hide');
-                // main.classList.remove('nav-hide-move-content');
-            }
-            if(currPosition - prevPosition > 50) {
-                prevPosition = currPosition;
-            }
-        }
-    },
-
-    toggleScrollMeBack: function(buffer) {
-        const mainContainer = document.getElementById('main');
-        mainContainer.onscroll = function() {
-            const currPosition = mainContainer.scrollTop;
+            // Show the take me back to the top button
             const scroller = document.getElementById('scrollMeUp');
-            if (currPosition > buffer) {
+            if (currPosition > buffer || currPosition > 100) {
                 scroller.classList.remove('d-none');
             }
             else {
                 scroller.classList.add('d-none');
             }
-            octopus.updateScrollPosition(currPosition);
+
+            // Hide and show the navbar
+            if(firstScroll){
+                if (currPosition - prevPosition > 50) {
+                    nav.style.top = '-' + octopus.getNavbarHeight();
+                    main.style.top = '-50px';
+                    // nav.classList.add('nav-hide');
+                    // main.classList.add('nav-hide-move-content');
+                    prevPosition = currPosition;
+                    firstScroll = false;
+                } else if (prevPosition - currPosition > 50) {
+                    prevPosition = currPosition;
+                }
+            } else {
+                if(prevPosition < currPosition) {
+                    prevPosition = currPosition;
+                } else {
+                    if(prevPosition - currPosition > 50){
+                        nav.style.top = '0';
+                        main.style.top = '0';
+                        // nav.classList.remove('nav-hide');
+                        // main.classList.remove('nav-hide-move-content');
+                        firstScroll = true;
+                        prevPosition = currPosition;
+                    }
+                }
+            }
         }
+    },
+
+    scrollMeUp: function() {
+        const scroller = document.getElementById('scrollMeUp');
+        const mainContainer = document.getElementById('main');
+        scroller.addEventListener('click', function(event) {
+            mainContainer.scrollTo({top: 0, behavior: 'smooth'})
+        })
     }
 }
 
