@@ -1,8 +1,54 @@
 // Data is stored in the model
 let model = {
     NAVHEIGHT: '100px',
-    bookmarked: []
-
+    bookmarked: [],
+    posts: [
+        {
+            id: "31ac8038-79a7-4470-9820-b6080017c16f",
+            title: "How the best pizza is cooked",
+            image: "./static/assets/img/_MG_2589.JPG",
+            content: "",
+            author: "Piervalerio Vignola",
+            length: "Oct 19 - 5 min read",
+            ratings: []
+        },
+        {
+            id: "963a9b9b-5682-46fc-a0a5-c4b1638979a3",
+            title: "How to get started with the mother yeast",
+            image: "./static/assets/img/lievito_madre.jpg",
+            content: "",
+            author: "Bruno Rossi",
+            length: "Aug 15 - 5 min read",
+            ratings: []
+        },
+        {
+            id: "a2dc2967-2f8e-439a-bd97-bd8ee9423149",
+            title: "How to prepare the perfect dough",
+            image: "./static/assets/img/DoughJPG.JPG",
+            content: "",
+            author: "Giovanni Verdi",
+            length: "Aug 3 - 8 min read",
+            ratings: []
+        },
+        {
+            id: "4f1d1eb5-a44e-4290-9e1d-08508cb060c7",
+            title: "The origins of crudaiola",
+            image: "./static/assets/img/crudaiola.jpg",
+            content: "",
+            author: "Bruno Rossi",
+            length: "Oct 5 - 7 min read",
+            ratings: []
+        },
+        {
+            id: "15f78953-6298-4f03-9059-37ef83e7aa23",
+            title: "All the secrets behind the bread",
+            image: "./static/assets/img/Bread.jpg",
+            content: "",
+            author: "Piervalerio Vignola",
+            length: "Sep 27 - 4 min read",
+            ratings: []
+        }
+    ]
 }
 
 // The octopus is the link between the model and the view
