@@ -35,7 +35,7 @@ let model = {
                       elit, sed do eiusmod tempor incididunt ut labore \
                       et dolore magna aliqua. Mauris vitae ultricies \
                       leo integer malesuada nunc vel risus.",
-            author: "33550a9b-6da6-43d6-8587-80f24bc0a49b",
+            authorId: "33550a9b-6da6-43d6-8587-80f24bc0a49b",
             length: "Aug 3 - 8 min read",
             ratings: []
         },
@@ -47,7 +47,7 @@ let model = {
                       elit, sed do eiusmod tempor incididunt ut labore \
                       et dolore magna aliqua. Mauris vitae ultricies \
                       leo integer malesuada nunc vel risus.",
-            author: "e1a2990a-f4ee-4589-b49d-98a3723ea243",
+            authorId: "e1a2990a-f4ee-4589-b49d-98a3723ea243",
             length: "Oct 5 - 7 min read",
             ratings: []
         },
@@ -59,7 +59,7 @@ let model = {
                       elit, sed do eiusmod tempor incididunt ut labore \
                       et dolore magna aliqua. Mauris vitae ultricies \
                       leo integer malesuada nunc vel risus.",
-            author: "0599a05c-5363-4663-b482-9307ec9088f4",
+            authorId: "0599a05c-5363-4663-b482-9307ec9088f4",
             length: "Sep 27 - 4 min read",
             ratings: []
         }
@@ -100,6 +100,54 @@ let octopus = {
         if (!isThere) {
             model.bookmarked.push(id);
         }
+        this.saveToLocalStorage('bookmarked', model.bookmarked);
+    },
+
+    // function taken from MDN docs. It checks if local or session storage is
+    // available
+    storageAvailable: function (type) {
+        let storage;
+        try {
+            storage = window[type];
+            var x = '__storage_test__';
+            storage.setItem(x, x);
+            storage.removeItem(x);
+            return true;
+        }
+        catch (e) {
+            return e instanceof DOMException && (
+                // everything except Firefox
+                e.code === 22 ||
+                // Firefox
+                e.code === 1014 ||
+                // test name field too, because code might not be present
+                // everything except Firefox
+                e.name === 'QuotaExceededError' ||
+                // Firefox
+                e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+                // acknowledge QuotaExceededError only if there's something already stored
+                (storage && storage.length !== 0);
+        }
+    },
+
+    saveToLocalStorage: function (key, value) {
+        try {
+            // Clear all values previously saved
+            localStorage.clear();
+
+            //Check if localStorage is available
+            if (this.storageAvailable("localStorage")) {
+                localStorage.setItem(key, JSON.stringify(value));
+                return true;
+            }
+        } catch (e) {
+            console.log(e);
+            return false;
+        }
+    },
+
+    readFromLocalStorage: function(key) {
+        return JSON.parse(localStorage.getItem(key));
     },
 
     removeFromBookmarked: function (id) {
@@ -112,8 +160,8 @@ let octopus = {
         // use the optional lim to get a defined number of bookmarked posts
         let bookmarked = [];
         let count = 0;
-
-        for (bookmark of model.bookmarked) {
+        const savedBookmarks = this.readFromLocalStorage('bookmarked') || [];
+        for (bookmark of savedBookmarks) {
             if (lim && count === lim) {
                 return bookmarked;
             }
