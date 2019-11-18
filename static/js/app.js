@@ -88,38 +88,59 @@ let model = {
 
 // The octopus is the link between the model and the view
 let octopus = {
-    init: function() {
+    init: function () {
         view.init();
     },
-    getNavbarHeight: function() {
+    getNavbarHeight: function () {
         return model.NAVHEIGHT;
     },
 
-    addToBookmarked: function(id) {
-        model.bookmarked.push(id);
+    addToBookmarked: function (id) {
+        const isThere = model.bookmarked.includes(id);
+        if (!isThere) {
+            model.bookmarked.push(id);
+        }
     },
 
-    removeFromBookmarked: function(id) {
-        model.bookmarked = model.bookmarked.filter(function(elem) {
+    removeFromBookmarked: function (id) {
+        model.bookmarked = model.bookmarked.filter(function (elem) {
             return elem != id;
         });
+    },
+    getBookmarked: function (lim) {
+        // use the optional lim to get a defined number of bookmarked posts
+        let bookmarked = [];
+        let count = 0;
+
+        for (bookmark of model.bookmarked) {
+            if (lim && count === lim) {
+                return bookmarked;
+            }
+            for (post of model.posts) {
+                if (bookmark === post.id) {
+                    bookmarked.push(post);
+                    count++;
+                }
+            }
+        }
+        return bookmarked;
     }
 }
 
 let view = {
-    init: function() {
+    init: function () {
         this.mainContentScrollHandlers(100);
         this.scrollMeUp();
         this.addEventListeners();
     },
 
-    mainContentScrollHandlers: function(buffer) {
+    mainContentScrollHandlers: function (buffer) {
         const nav = document.getElementsByTagName('nav')[0];
         const mainContainer = document.getElementById('main');
         let prevPosition = mainContainer.scrollTop;
         let firstScroll = true;
-        mainContainer.onscroll = function() {
-            const currPosition = mainContainer.scrollTop; 
+        mainContainer.onscroll = function () {
+            const currPosition = mainContainer.scrollTop;
 
             // Show the take me back to the top button
             const scroller = document.getElementById('scrollMeUp');
@@ -131,7 +152,7 @@ let view = {
             }
 
             // Hide and show the navbar
-            if(firstScroll){
+            if (firstScroll) {
                 if (currPosition - prevPosition > 50) {
                     nav.style.top = '-' + octopus.getNavbarHeight();
                     main.style.top = '-50px';
@@ -143,10 +164,10 @@ let view = {
                     prevPosition = currPosition;
                 }
             } else {
-                if(prevPosition < currPosition) {
+                if (prevPosition < currPosition) {
                     prevPosition = currPosition;
                 } else {
-                    if(prevPosition - currPosition > 50){
+                    if (prevPosition - currPosition > 50) {
                         nav.style.top = '0';
                         main.style.top = '0';
                         // nav.classList.remove('nav-hide');
@@ -159,11 +180,11 @@ let view = {
         }
     },
 
-    scrollMeUp: function() {
+    scrollMeUp: function () {
         const scroller = document.getElementById('scrollMeUp');
         const mainContainer = document.getElementById('main');
-        scroller.addEventListener('click', function(event) {
-            const animatedScrolling = function() {
+        scroller.addEventListener('click', function (event) {
+            const animatedScrolling = function () {
                 const c = mainContainer.scrollTop;
                 if (c > 0) {
                     window.requestAnimationFrame(animatedScrolling);
@@ -174,16 +195,16 @@ let view = {
         });
     },
 
-    addEventListeners: function() {
+    addEventListeners: function () {
         const searchButton = document.querySelector('.search');
-        searchButton.addEventListener('click', function() {
+        searchButton.addEventListener('click', function () {
             this.nextElementSibling.classList.toggle('d-none');
         });
-        
+
         // Fill/Unfill bookmarks on click
         const bookmarks = document.querySelectorAll('.fa-bookmark');
         for (bookmark of bookmarks) {
-            bookmark.addEventListener('click', function() {
+            bookmark.addEventListener('click', function () {
                 const removed = this.classList.toggle('bookmark-empty');
                 const id = this.dataset.id;
                 if (removed) {
