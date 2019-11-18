@@ -97,8 +97,8 @@ let octopus = {
 
     addToBookmarked: function (id) {
         const isThere = model.bookmarked.includes(id);
-        if (!isThere) {
-            model.bookmarked.push(id);
+        if(!isThere){
+            model.bookmarked.push(id); 
         }
     },
 
@@ -107,13 +107,14 @@ let octopus = {
             return elem != id;
         });
     },
+    
     getBookmarked: function (lim) {
         // use the optional lim to get a defined number of bookmarked posts
         let bookmarked = [];
         let count = 0;
-
-        for (bookmark of model.bookmarked) {
-            if (lim && count === lim) {
+        
+        for (bookmark of model.bookmarked){
+            if(lim && count === lim) {
                 return bookmarked;
             }
             for (post of model.posts) {
@@ -124,7 +125,16 @@ let octopus = {
             }
         }
         return bookmarked;
+    },
+
+    getAuthor: function(authorId) {
+        for (author of model.authors) {
+            if (author.id === authorId){
+                return author;
+            }
+        }
     }
+
 }
 
 let view = {
@@ -132,6 +142,7 @@ let view = {
         this.mainContentScrollHandlers(100);
         this.scrollMeUp();
         this.addEventListeners();
+        this.loadBookmarkedPosts();
     },
 
     mainContentScrollHandlers: function (buffer) {
@@ -215,6 +226,67 @@ let view = {
 
             });
         }
+    },
+    loadBookmarkedPosts: function () {
+        const navPage = document.querySelector('.nav-link-active');
+        if (navPage) {
+            const page = navPage.dataset.page;
+            if (page === 'bookmarked') {
+                const container = document.querySelector('.container');
+                const fragment = document.createDocumentFragment();
+                let count = 1;
+                const bookmarkedPosts = octopus.getBookmarked();
+                if(bookmarkedPosts.length === 0) return;
+
+                for (post of bookmarkedPosts) {
+                    const author = octopus.getAuthor(post.authorId);
+                    const card = document.createElement('div');
+                    card.classList.add('card', 'post-bookmark', 'p-0')
+                    card.innerHTML =
+                        `<div class="card-sided-small">
+                            <div class="small-side">
+                            <img src="${post.image}" class="card-img card-sided-small-img-left">
+                        </div>
+                        <div class="card-side large-side">
+                            <div class="card-small-header-group">
+                                <a href="#">
+                                    <h1 class="header-title" data-id="${post.id}">${post.title}</h1>
+                                </a>
+                            </div>
+
+                            <div>
+                                <div class="row ml-05 mr-05">
+                                    <span class="author" data-authorId="${author.id}">${author.name}</span>
+                                </div>
+                                <div class="card-footer m-0 w-100">
+                                    <div class="rating rating-group d-inline-flex text-warning">
+                                        <span class="fas fa-star star-empty"></span>
+                                        <span class="fas fa-star star-empty"></span>
+                                        <span class="fas fa-star star-empty"></span>
+                                        <span class="fas fa-star star-empty"></span>
+                                        <span class="fas fa-star star-empty"></span>
+                                        <div class="text-description font-light ml-05">
+                                            <span id="totalReview"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="font-light mr-05">
+                                        <span class="font-small date">${post.length}</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>`;
+                    fragment.appendChild(card);
+                }
+                container.appendChild(fragment);
+                if (count > 10) {
+                    setTimeout(this.loadBookmarkedPosts, 0);
+                }
+            }
+        }
+        return;
     }
 }
 
