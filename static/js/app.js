@@ -97,8 +97,8 @@ let octopus = {
 
     addToBookmarked: function (id) {
         const isThere = model.bookmarked.includes(id);
-        if(!isThere){
-            model.bookmarked.push(id); 
+        if (!isThere) {
+            model.bookmarked.push(id);
         }
     },
 
@@ -107,14 +107,14 @@ let octopus = {
             return elem != id;
         });
     },
-    
+
     getBookmarked: function (lim) {
         // use the optional lim to get a defined number of bookmarked posts
         let bookmarked = [];
         let count = 0;
-        
-        for (bookmark of model.bookmarked){
-            if(lim && count === lim) {
+
+        for (bookmark of model.bookmarked) {
+            if (lim && count === lim) {
                 return bookmarked;
             }
             for (post of model.posts) {
@@ -127,9 +127,9 @@ let octopus = {
         return bookmarked;
     },
 
-    getAuthor: function(authorId) {
+    getAuthor: function (authorId) {
         for (author of model.authors) {
-            if (author.id === authorId){
+            if (author.id === authorId) {
                 return author;
             }
         }
@@ -236,7 +236,7 @@ let view = {
                 const fragment = document.createDocumentFragment();
                 let count = 1;
                 const bookmarkedPosts = octopus.getBookmarked();
-                if(bookmarkedPosts.length === 0) return;
+                if (bookmarkedPosts.length === 0) return;
 
                 for (post of bookmarkedPosts) {
                     const author = octopus.getAuthor(post.authorId);
