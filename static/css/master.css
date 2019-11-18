@@ -153,6 +153,11 @@ a {
     color: #607d8b;
 }
 
+.nav-link-active {
+    background-color: #FAFAFA;
+    color: #607d8b;
+}
+
 .search-input {
     position: absolute;
     width: 300px;
